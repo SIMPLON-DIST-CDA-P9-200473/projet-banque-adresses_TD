@@ -1,0 +1,40 @@
+services:
+  db:
+    image: postgres:18-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: brief
+    ports:
+      - 5432:5432
+    volumes:
+      - db_data:/var/lib/postgresql
+
+  # adminer:
+  #   image: adminer
+  #   restart: always
+  #   ports:
+  #     - 8080:8080
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@domain.com
+      PGADMIN_DEFAULT_PASSWORD: SuperSecret
+      PGADMIN_DISABLE_POSTFIX: "1"
+      PGADMIN_CONFIG_MAIL_SERVER: "'mail.example.com'"
+      PGADMIN_CONFIG_MAIL_PORT: "587"
+      PGADMIN_CONFIG_MAIL_USE_TLS: "True"
+      PGADMIN_CONFIG_MAIL_USERNAME: "'smtp-user'"
+      PGADMIN_CONFIG_MAIL_PASSWORD: "'s3cret=value'"
+      PGADMIN_CONFIG_SECURITY_EMAIL_SENDER: "'pgadmin@example.com'"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    depends_on:
+      - db
+
+volumes:
+  pgadmin-data:
+  db_data:

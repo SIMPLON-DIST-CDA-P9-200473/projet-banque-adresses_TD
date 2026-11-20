@@ -1,0 +1,25 @@
+# Données volumineuses
+*.csv
+data/raw/*
+data/processed/*
+
+# Exceptions pour conserver les dossiers
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Fichiers sensibles
+.env
+.env.*
+
+# Sauvegardes
+*.dump
+*.backup
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Système
+.DS_Store
+Thumbs.db
