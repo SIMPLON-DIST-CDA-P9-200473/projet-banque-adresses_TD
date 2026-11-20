@@ -110,9 +110,9 @@ projet-banque-adresses_TD/
 │   ├── regles_gestion.md
 │   ├── rapport_questionnement.md
 │   └── schemas/
-│       ├── MCD.png
-│       ├── MLD.png
-│       └── MPD.png
+│       ├── MCD.pdf
+│       ├── MLD.pdf
+│       └── MPD.pdf
 │
 ├── sql/
 │   ├── 01_creation_tables.sql
@@ -139,6 +139,16 @@ projet-banque-adresses_TD/
 | `sql/` | Scripts de création, migration et analyse |
 | `tests/` | Tests de cohérence et de performance |
 | `screenshots/` | Captures d'écran des réalisations |
+
+### 📚 Référentiel de conception
+
+Le référentiel de conception regroupe les éléments nécessaires à la modélisation de la base de données :
+
+- Règles de gestion (RG).
+- Dictionnaire des données.
+- Contraintes d'intégrité et règles de cohérence.
+
+📄 [Consulter le référentiel de conception](documentation/referentiel/referentiel_conception.xlsx)
 
 ## 🗄️ Modélisation MERISE
 
@@ -203,16 +213,6 @@ Consulter les journaux :
 ```bash
 docker compose logs -f
 ```
-
-### 4. Connexion avec DBeaver
-
-Créer une nouvelle connexion PostgreSQL dans DBeaver avec les paramètres définis dans `compose.yml` :
-
-- **Hôte :** localhost
-- **Port :** port PostgreSQL exposé
-- **Base de données :** selon la configuration Docker
-- **Utilisateur :** selon la configuration Docker
-- **Mot de passe :** selon la configuration Docker
 
 ### 5. Arrêter les conteneurs
 
